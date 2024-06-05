@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "398555808166",
+    "project_id": "dameyu-f9f2e",
+    "storage_bucket": "dameyu-f9f2e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398555808166:android:99a34d48ddbe4d38dbcf67",
+        "android_client_info": {
+          "package_name": "com.example.dameyu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_gFoGJVDio3dCD9TFW6LtPB-1TCMsSDw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
