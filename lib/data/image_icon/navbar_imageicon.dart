@@ -1,6 +1,8 @@
 class NavBarImageIcon{
-  static String home_NavbarIcon = 'assets/images/home_iconNavBar.png';
-  static String pengingat_NavbarIcon = 'assets/images/pengingat_iconNavBar.png';
-  static String tanaman_NavbarIcon = 'assets/images/tanaman_iconNavBar.png';
-  static String riwayat_NavbarIcon = 'assets/images/riwayat_iconNavBar.png';
+  // ignore: non_constant_identifier_names
+  static String home_NavbarIcon = 'assets/home.png';
+  // ignore: non_constant_identifier_names
+  static String result_NavbarIcon = 'assets/result.png';
+  // ignore: non_constant_identifier_names
+  static String profile_NavbarIcon = 'assets/profile.png';
 }

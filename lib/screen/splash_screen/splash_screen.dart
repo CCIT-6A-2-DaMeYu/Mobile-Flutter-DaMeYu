@@ -1,13 +1,13 @@
 import 'package:dameyu/model/user_model.dart';
 import 'package:dameyu/provider/user_provider.dart';
-import 'package:dameyu/screen/home/home_screen.dart';
 import 'package:dameyu/screen/login/login_screen.dart';
+import 'package:dameyu/screen/navigation_bart.dart';
 import 'package:dameyu/utils/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class SplashScreen extends StatelessWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class SplashScreen extends StatelessWidget {
           userProvider.setUser(UserModel(token));
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => const HomeScreen()),
+            MaterialPageRoute(builder: (context) => const NavBar()),
             (route) => false,
           );
         } else {

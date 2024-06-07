@@ -1,5 +1,5 @@
 import 'package:dameyu/provider/login_provider.dart';
-import 'package:dameyu/screen/home/home_screen.dart';
+import 'package:dameyu/screen/navigation_bart.dart';
 import 'package:dameyu/theme/theme_text_style.dart';
 import 'package:dameyu/utils/shared_preferences.dart';
 import 'package:dameyu/widget/login/button_login_widget.dart';
@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -113,9 +113,10 @@ class _LoginScreenState extends State<LoginScreen> {
               );
               // ignore: use_build_context_synchronously
               Navigator.pushReplacement(
+                // ignore: use_build_context_synchronously
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const HomeScreen(),
+                  builder: (context) => const NavBar(),
                 ),
               );
             }
