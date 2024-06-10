@@ -24,12 +24,6 @@ class _HomeScreenState extends State<HomeScreen> {
         child: AppBar(
           backgroundColor: ThemeColor().pinkColor,
           centerTitle: true,
-          // leading: Padding(
-          //   padding: const EdgeInsets.only(left: 01.0), // Sesuaikan padding sesuai kebutuhan Anda
-       
-              // width: 00, // Sesuaikan lebar gambar
-              // height: 100, // Sesuaikan tinggi gambar
-            
               title: Align(
             alignment: Alignment.centerLeft,
             child: Image.asset(
