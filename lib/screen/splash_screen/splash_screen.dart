@@ -6,8 +6,46 @@ import 'package:dameyu/utils/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
+
+  @override
+  _SplashScreenState createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      checkLogin(context);
+    });
+  }
+
+  void checkLogin(BuildContext context) async {
+    String token = await SharedPref().getToken();
+
+    Future.delayed(
+      const Duration(seconds: 3),
+      () {
+        if (!mounted) return; // Ensure the widget is still mounted
+        if (token.isNotEmpty) {
+          Provider.of<UserProvider>(context, listen: false).setUser(UserModel(token));
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => const NavBar()),
+            (route) => false,
+          );
+        } else {
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => const LoginScreen()),
+            (route) => false,
+          );
+        }
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,40 +60,10 @@ class SplashScreen extends StatelessWidget {
               width: 800,
               height: 800,
             ),
-            Consumer<UserProvider>(
-              builder: (context, userProvider, child) {
-                // Di sini kita memeriksa status login menggunakan UserProvider
-                checkLogin(context, userProvider);
-                return const SizedBox(); // Ini akan menghilangkan indikator loading.
-              },
-            ),
+            const SizedBox(),
           ],
         ),
       ),
-    );
-  }
-
-  void checkLogin(BuildContext context, UserProvider userProvider) async {
-    String token = await SharedPref().getToken();
-
-    Future.delayed(
-      const Duration(seconds: 3),
-      () {
-        if (token.isNotEmpty) {
-          userProvider.setUser(UserModel(token));
-          Navigator.pushAndRemoveUntil(
-            context,
-            MaterialPageRoute(builder: (context) => const NavBar()),
-            (route) => false,
-          );
-        } else {
-          Navigator.pushAndRemoveUntil(
-            context,
-            MaterialPageRoute(builder: (context) => const LoginScreen()),
-            (route) => false,
-          );
-        }
-      },
     );
   }
 }
