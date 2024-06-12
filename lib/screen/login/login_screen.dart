@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+   const LoginScreen({Key? key}) : super(key: key);
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -28,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
         backgroundColor: const Color(0xFFEB6383),
         body: Stack(
           children: [
-            Positioned(top: 100, child: filmText()),
+            Positioned(top: 100, child: appleText()),
             Positioned(bottom: 0, child: card()),
           ],
         ),
@@ -36,22 +36,16 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget filmText() {
+  Widget appleText() {
     return SizedBox(
       width: mediaSize.width,
       child: Column(
         children: [
           const SizedBox(height: 20),
           Image.asset(
-            "assets/logo.png",
-            width: 300,
-            height: 300,
+            "assets/logo3.png",
+           
           ),
-          // const SizedBox(height: 20),
-          // Text(
-          //   "AS FILM",
-          //   style: ThemeTextStyle().asFilm,
-          //   ),
         ],
       ),
     );
