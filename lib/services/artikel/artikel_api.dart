@@ -11,7 +11,7 @@ class ArtikelAPI {
 
       if (response.statusCode == 200) {
         return List<Map<String, dynamic>>.from(
-          response.data.map((dynamic reminder) => reminder as Map<String, dynamic>),
+          response.data.map((dynamic artikel) => artikel as Map<String, dynamic>),
         );
       } else {
         // ignore: avoid_print

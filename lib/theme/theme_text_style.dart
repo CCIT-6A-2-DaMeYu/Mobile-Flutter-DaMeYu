@@ -20,4 +20,10 @@ class ThemeTextStyle {
     fontWeight: FontWeight.w600,
     color: ThemeColor().white2Color,
   );
+
+  TextStyle artikel = GoogleFonts.poppins(
+    fontSize: 20,
+    fontWeight: FontWeight.w700,
+    color: ThemeColor().pinkColor,
+  );
 }

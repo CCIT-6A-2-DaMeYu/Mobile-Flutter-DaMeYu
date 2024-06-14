@@ -75,15 +75,25 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 10),
-            Center(
-              child: Text(
-                'Welcome! $_username',
-                style: ThemeTextStyle().welcomeUsername,
+             Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                child: Text(
+                  'Hi! $_username',
+                  style: ThemeTextStyle().welcomeUsername,
+                ),
               ),
             ),
+            // Center(
+            //   child: Text(
+            //     'Welcome! $_username',
+            //     style: ThemeTextStyle().welcomeUsername,
+            //   ),
+            // ),
             IconButton(
             icon: const Icon(Icons.logout),
-            color: ThemeColor().white2Color,
+            color: ThemeColor().pinkColor,
             onPressed: () async {
               Navigator.pushAndRemoveUntil(
                     context,
@@ -118,8 +128,35 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
             ),
-             const SizedBox(height: 40),
-
+             const SizedBox(height: 80),
+              Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 55.0),
+                child: Text(
+                  'Artikel',
+                  style: ThemeTextStyle().artikel,
+                ),
+              ),
+            ),
+            ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: 10,
+              itemBuilder: (context, index) {
+                return Card(
+                  color: const Color(0xFFFFA0B5),
+                  margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 12),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  elevation: 3,
+                  child: const Padding(
+                    padding: EdgeInsets.all(40),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
