@@ -1,6 +1,6 @@
 // resolve flutter error looking up a deactivated widget's ancestor is unsafe disini splash screen 
 
-import 'package:dameyu/model/user_model.dart';
+import 'package:dameyu/model/login/user_model.dart';
 import 'package:dameyu/provider/user_provider.dart';
 import 'package:dameyu/screen/login/login_screen.dart';
 import 'package:dameyu/screen/navigation_bart.dart';

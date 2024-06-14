@@ -1,4 +1,4 @@
-import 'package:dameyu/model/user_model.dart';
+import 'package:dameyu/model/login/user_model.dart';
 import 'package:flutter/material.dart';
 
 

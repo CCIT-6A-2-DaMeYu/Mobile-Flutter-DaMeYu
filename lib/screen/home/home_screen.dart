@@ -92,11 +92,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     (route) => false);
                 await SharedPref().removeToken();
-             
-      
             }
           ),
-            const SizedBox(height: 40),
+            // const SizedBox(height: 10),
             SizedBox(
               width: double.infinity,
               child: CarouselSlider.builder(
@@ -120,6 +118,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
             ),
+             const SizedBox(height: 40),
+
           ],
         ),
       ),
