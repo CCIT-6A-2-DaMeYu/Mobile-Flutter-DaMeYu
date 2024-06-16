@@ -47,7 +47,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           actions: [
-            
             Padding(
               padding: const EdgeInsets.only(right: 20.0),
               child: IconButton(
@@ -69,6 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
+
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Column(
@@ -85,16 +85,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-            // Center(
-            //   child: Text(
-            //     'Welcome! $_username',
-            //     style: ThemeTextStyle().welcomeUsername,
-            //   ),
-            // ),
             IconButton(
-            icon: const Icon(Icons.logout),
-            color: ThemeColor().pinkColor,
-            onPressed: () async {
+              icon: const Icon(Icons.logout),
+              color: ThemeColor().pinkColor,
+              onPressed: () async {
               Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
@@ -104,7 +98,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 await SharedPref().removeToken();
             }
           ),
-            // const SizedBox(height: 10),
             SizedBox(
               width: double.infinity,
               child: CarouselSlider.builder(
@@ -128,6 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
             ),
+
              const SizedBox(height: 80),
               Align(
               alignment: Alignment.centerLeft,
@@ -139,6 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
+            
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
